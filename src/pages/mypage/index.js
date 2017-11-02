@@ -5,3 +5,6 @@ module.exports = {
     console.log(`hello world`)
   }
 }
+
+console.log(jquery) // jquery is globally avaliable
+console.log(moment) // moment is globally avaliable

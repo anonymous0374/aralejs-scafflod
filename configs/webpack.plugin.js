@@ -5,6 +5,7 @@
  *
  */
 const path = require('path')
+const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const AppConfig = require('./app.config.js')
@@ -30,24 +31,11 @@ function generatePlugins(config) {
   return plugins
 }
 
-/*
-function calculateHtmlOutpath(inpath) {
-  let outpath = ''
-  outpath = path.resolve(__dirname, `${inpath.replace('../src', '../dist').replace('.hbs', '.html').replace('/pages', '')}`)
-
-  return outpath
-}*/
-
 module.exports = {
   plugins: [
-    /*
-      new HtmlWebpackPlugin({
-        template: path.resolve(__dirname, AppConfig.entries[0])
-      }),*/
-    ...generatePlugins(AppConfig) //,
-    /*
-        new webpack.optimize.CommonsChunkPlugin({
-          name: 'common' // name the bundle for common modules across different bundles
-        }),*/
+    ...generatePlugins(AppConfig),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'common' // name the bundle for common modules across different bundles
+    })
   ]
 };

@@ -66,8 +66,10 @@ module.exports = {
       root: path.resolve(__dirname, '../')
     }),
     new webpack.ProvidePlugin({
-      // lodash: 'lodash',
-      // jquery: 'jquery'
+      lodash: 'lodash',
+      jquery: 'jquery',
+      $: 'jquery',
+      moment: 'moment'
     }),
     new ExtractTextPlugin({
       filename: "[name]/[chunkhash][name].css",
