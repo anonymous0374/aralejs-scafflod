@@ -6,20 +6,8 @@
  */
 const path = require('path')
 const AppConfig = require('./app.config.js')
-
-function getEntries(config) {
-  var i = 0,
-    len = config.entryPaths.length,
-    entries = {}
-
-  for (i = 0; i < len; i += 1) {
-    entries[config.entryNames[i]] = path.resolve(__dirname, config.entryPaths[i])
-  }
-
-  return entries
-}
+const MyPath = require('../utilities/path.js')
 
 module.exports = {
-  entry: getEntries(AppConfig)
-
+  entry: MyPath.getEntries(AppConfig)
 }
