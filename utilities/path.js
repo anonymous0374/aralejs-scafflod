@@ -11,7 +11,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 // get output path of .html pages from entry path of .hbs files
 function calculateHtmlOutpath(inpath) {
   let outpath = ''
-  outpath = path.resolve(__dirname, `${inpath.replace('../src', '../dist').replace('.hbs', '.html').replace('/pages', '')}`)
+  outpath = path.resolve(__dirname, `${inpath.replace('../src', '../dist').replace('.js', '.html').replace('/pages', '')}`)
 
   return outpath
 }
@@ -22,7 +22,7 @@ function getEntries(config) {
     entries = {}
 
   for (i = 0; i < len; i += 1) {
-    entries[config.entryNames[i]] = path.resolve(__dirname, config.entryPaths[i])
+    entries[config.entryNames[i]] = path.resolve(__dirname, config.entryPaths[i]).replace('.hbs', '.js')
   }
 
   return entries
@@ -38,7 +38,7 @@ function generatePlugins(config) {
     let template = config.entryPaths[i]
     let len = template.length
     plugins.push(new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, template),
+      template: path.resolve(__dirname, template.replace('.js', '.hbs')),
       filename: `${calculateHtmlOutpath(template)}` // remove .hbs postfix
     }))
   }
