@@ -9,13 +9,12 @@ const AppConfig = require('./app.config.js')
 
 function getEntries(config) {
   var i = 0,
-    len = config.entries.length,
+    len = config.entryPaths.length,
     entries = []
 
   for (i = 0; i < len; i += 1) {
-    entries.push({
-      entry: path.resolve(__dirname, config.entries[i])
-    })
+    let entry = {}
+    entry[config.entryNames[i]] = path.resolve(__dirname, config.entryNames[i])
   }
 
   return entries
@@ -23,7 +22,9 @@ function getEntries(config) {
 
 module.exports = {
   // ...getEntries(AppConfig)
+
   entry: {
-    app: path.resolve(__dirname, '../src/pages/index/index.js')
+    index: path.resolve(__dirname, '../src/pages/index/index.js'),
+    mypage: path.resolve(__dirname, '../src/pages/mypage/index.js')
   }
 }

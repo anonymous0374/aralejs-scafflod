@@ -5,8 +5,11 @@
  *
  */
 
+const path = require('path')
+
 module.exports = {
-  srcPath: "./src",
-  entries: ['../src/pages/index/index.hbs'],
-  outputs: ['../dist/index']
+  srcPath: path.resolve(__dirname, '../src'),
+  entryNames: ['index', 'mypage'],
+  entryPaths: ['../src/pages/index/index.hbs', '../src/pages/mypage/index.hbs'], // note here, use .hbs as entry instead of .js
+  outputRoot: path.resolve(__dirname, '../dist')
 }

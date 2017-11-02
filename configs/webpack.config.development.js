@@ -28,6 +28,6 @@ config = merge(config, output)
 config = merge(config, plugin)
 config = merge(config, devConfig)
 
-console.log(config.plugins)
+// console.log(config.plugins)
 
 module.exports = config
