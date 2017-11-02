@@ -3,6 +3,6 @@ const BasicInfo = require('../../components/BasicInfoComponent/index.js')
 
 $((function(host) {
 
-  console.log($template)
+  BasicInfo.render({})
 
 })(window))

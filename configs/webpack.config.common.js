@@ -69,7 +69,8 @@ module.exports = {
       lodash: 'lodash',
       jquery: 'jquery',
       $: 'jquery',
-      moment: 'moment'
+      moment: 'moment',
+      handlebars: 'handlebars'
     }),
     new ExtractTextPlugin({
       filename: "[name]/[chunkhash][name].css",

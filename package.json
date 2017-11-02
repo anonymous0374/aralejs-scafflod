@@ -13,7 +13,7 @@
   "author": "j-sparrow",
   "license": "ISC",
   "dependencies": {
-    "handlebars": "^4.0.10",
+    "handlebars": "^4.0.11",
     "handlebars-layouts": "^3.1.4",
     "handlebars-loader": "^1.6.0",
     "jquery": "^3.2.1",

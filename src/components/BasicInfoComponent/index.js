@@ -5,10 +5,24 @@
 
 import './style.css'
 
-function render(data) {
-  console.log(jquery)
-}
+var template = `<div>
+<div><span>Name:</span><input type='text' /></div>
+<div><span>Gender:</span><input type='text' /></div>
+<div><span>Gender:</span><span>{{info.name}}<</div>
+<div><span>Gender:</span><span>{{info.gender}}<</div>
+</div>`
 
 module.exports = {
   render: render
+}
+
+function render(data) {
+  let compiler = handlebars.compile(template)
+  let html = compiler({
+    info: {
+      name: 'jack sparrow'
+    }
+  })
+
+  console.log(html)
 }
