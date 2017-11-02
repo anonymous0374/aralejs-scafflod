@@ -3,7 +3,7 @@
  * purpose: entry point of basicinfo component
  */
 
-require('./style.css')
+import './style.css'
 
 function render(data) {
   console.log(jquery)
