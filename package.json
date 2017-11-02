@@ -17,6 +17,7 @@
     "handlebars-layouts": "^3.1.4",
     "handlebars-loader": "^1.6.0",
     "jquery": "^3.2.1",
+    "moment": "^2.19.1",
     "sass-loader": "^6.0.6"
   },
   "devDependencies": {
