@@ -23,6 +23,4 @@ function render(data) {
       name: 'jack sparrow'
     }
   })
-
-  console.log(html)
 }

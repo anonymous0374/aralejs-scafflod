@@ -38,7 +38,7 @@ function generatePlugins(config) {
     let template = config.entryPaths[i]
     let len = template.length
     plugins.push(new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, template.replace('.js', '.hbs')),
+      template: path.resolve(__dirname, template.replace('.js', '.html')),
       filename: `${calculateHtmlOutpath(template)}` // remove .hbs postfix
     }))
   }
